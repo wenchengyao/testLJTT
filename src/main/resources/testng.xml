@@ -1,0 +1,13 @@
+<!DOCTYPE suite SYSTEM "http://beust.com/testng/testng-1.0.dtd" >
+<suite name="Java Selenium Framework" parallel="methods" verbose="1" thread-count="1" configfailurepolicy="continue">
+
+    <!-- listeners>
+        <listener class-name="com.isst.listeners.WebDriverListener" />
+    </listeners -->
+
+    <test name="all-tests">
+        <packages>
+            <package name="com.isst.tests.*"/>
+        </packages>
+    </test>
+</suite>
