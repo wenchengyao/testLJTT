@@ -45,6 +45,9 @@ public class BaseElement extends Driver {
     @FindBy(css = "div.text-info")
     private WebElement topdialog;
     
+    @FindBy(css = "button[ng-click='yes()']")
+    private WebElement deleteEnsure;
+    
     /**
      * 【功能】界面跳转-大屏->首页
      * @throws InterruptedException
@@ -60,6 +63,8 @@ public class BaseElement extends Driver {
      * @throws InterruptedException
      */
     public void goSystemPage() throws InterruptedException {
+    	Thread.sleep(1000);
+    	this.waitForElement(guanlipt);
     	guanlipt.click();
     	this.waitBusyDialogDispear();
     	this.waitForElement(iotdm);
@@ -105,30 +110,54 @@ public class BaseElement extends Driver {
     	return topdialog.getText();
     }
     
+    /***
+     * 确认删除
+     * @throws InterruptedException
+     */
+    public void ensureDelete() throws InterruptedException{
+    	deleteEnsure.click();
+    	Thread.sleep(500);
+    	this.waitBusyDialogDispear();
+    }
+    
     
 	/***
 	 * 实现自己的异常，用于将所有的断言都运行
 	 * <功能详细描述>
-	 * @param a exp
-	 * @param b act
+	 * @param actual
+	 * @param expected
 	 * @see [类、类#方法、类#成员]
 	 */
-	public void assertEquals(String a,String b){
+	public void assertEquals(String actual,String expected){
 		try{
-			Assert.assertEquals(a,b);
+			Assert.assertEquals(expected,actual);
 		}catch(ComparisonFailure e){
 			addFail(e);
 		}
 	}
+	
 	/***
 	 * 实现自己的异常，用于将所有的断言都运行
-	 * @param a throwable
-	 * @param b exp
-	 * @param c act
+	 * @param message
+	 * @param actual
+	 * @param expected
 	 */
-	public void assertEquals(String a,String b,String c){
+	public void assertEquals(String message,String actual,String expected){
 		try{
-			Assert.assertEquals(a,b,c);
+			Assert.assertEquals(message,expected,actual);
+		}catch(ComparisonFailure e){
+			addFail(e);
+		}
+	}
+	
+	/***
+	 * 实现自己的异常，用于校验空
+	 * @param message
+	 * @param object
+	 */
+	public void assertNull(String message,Object object){
+		try{
+			Assert.assertNull(message,object);
 		}catch(ComparisonFailure e){
 			addFail(e);
 		}

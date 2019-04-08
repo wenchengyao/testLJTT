@@ -16,11 +16,21 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 public class DriverManager {
 
     private static final String HEADLESS = "headless";
-    public static WebDriver createInstance(String browserName, String appUrl, String methodName) throws MalformedURLException {
+    
+    /***
+     * 创建驱动
+     * @param browserName
+     * @param appUrl
+     * @param methodName
+     * @param dbus 指明chromedriver或者其他的路径
+     * @return
+     * @throws MalformedURLException
+     */
+    public static WebDriver createInstance(String browserName, String appUrl, String methodName,String dbus) throws MalformedURLException {
         final String browserMode = System.getProperty("mode");
         WebDriver driver = null;
         if(browserName.toLowerCase().contains("firefox")) {
-            System.setProperty("webdriver.gecko.driver", "driver/osx/geckodriver");
+            System.setProperty("webdriver.gecko.driver", dbus);
             if(browserMode !=null  && browserMode.equals(HEADLESS)){
                 FirefoxOptions firefoxOptions = new FirefoxOptions();
                 firefoxOptions.addArguments("--headless");
@@ -31,7 +41,7 @@ public class DriverManager {
 
         }
         if(browserName.toLowerCase().contains("chrome")) {
-            System.setProperty("webdriver.chrome.driver", "D:/testcase/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", dbus);
             if(browserMode !=null  && browserMode.equals(HEADLESS)){
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--headless");

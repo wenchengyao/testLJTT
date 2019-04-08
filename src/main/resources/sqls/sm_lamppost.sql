@@ -1,0 +1,1 @@
+INSERT INTO `sm_lamppost` (`id_`, `arch_id_`, `arch_name_`, `create_time_`, `description_`, `device_type_id_`, `excel_row_`, `lamppost_num_`, `latitude_`, `longitude_`, `name_`, `online_status_`, `sensor_id`, `create_use_`) VALUES (10000, 10005, '花山路', '2019-4-2 19:50:34', NULL, NULL, NULL, 'testEditLampPost', 30.065432, 100.012345, 'testEditLampPost', NULL, NULL, NULL);

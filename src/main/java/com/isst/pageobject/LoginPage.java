@@ -23,8 +23,9 @@ public class LoginPage extends BaseElement {
     private WebElement guanli; //管理平台按钮
 
     public void login(String username, String password) throws InterruptedException {
-    	username1.sendKeys(username);
-    	password1.sendKeys(password);
+    	this.waitForElement(username1);
+    	this.sendKeys(username1, username);
+    	this.sendKeys(password1, password);
     	Thread.sleep(500);
         submit1.click();
         this.waitForElement(guanli);

@@ -1,0 +1,178 @@
+<?xml version='1.0' encoding='GBK'?>
+<dataset>
+  <bla_action_ref_device/>
+  <bla_action_ref_group/>
+  <bla_action_ref_lamppost/>
+  <bla_action_ref_playlist/>
+  <bla_alarm/>
+  <bla_alarm_category alarm_category_id_="1" description_="离线告警" name_="offLine"/>
+  <bla_alarm_category alarm_category_id_="2" description_="一键报警" name_="alertorAlarm"/>
+  <bla_alarm_category alarm_category_id_="3" description_="过流告警" name_="over-current"/>
+  <bla_alarm_category alarm_category_id_="4" description_="欠流告警" name_="under-current"/>
+  <bla_alarm_category alarm_category_id_="5" description_="过压告警" name_="over-voltage"/>
+  <bla_alarm_category alarm_category_id_="6" description_="欠压告警" name_="under-voltage"/>
+  <bla_alarm_category alarm_category_id_="7" description_="阈值告警"/>
+  <bla_alarm_category alarm_category_id_="8" description_="告警类型"/>
+  <bla_camera/>
+  <bla_camera_download/>
+  <bla_cameras_server/>
+  <bla_collection/>
+  <bla_device_type/>
+  <bla_envmonitor_data/>
+  <bla_equipment/>
+  <bla_home_color/>
+  <bla_loop_light_select/>
+  <bla_manufacturer/>
+  <bla_model/>
+  <bla_plan/>
+  <bla_plan_action/>
+  <bla_plan_exec_status/>
+  <bla_plan_ref_device/>
+  <bla_plan_send_entity/>
+  <bla_plan_send_log/>
+  <bla_sensor/>
+  <bla_sensor_alarm_param/>
+  <bla_sensor_day_energy/>
+  <bla_sensor_energy/>
+  <bla_sensor_month_energy/>
+  <bla_sensor_property/>
+  <bla_sensor_switch_status/>
+  <sm_architecture arch_id_="1" create_time_="2019-01-16 10:53:59.0" creator_id_="1" has_child_="1" latitude_="39.906042" level_="1" longitude_="116.405285" name_="中国" number_="AD0000000001" parent_id_="0" search_code_="1|" update_time_="2019-01-16 10:53:59.0"/>
+  <sm_architecture arch_id_="3" create_time_="2019-01-16 10:56:54.0" creator_id_="1" has_child_="1" latitude_="30.593241" level_="2" longitude_="114.304567" name_="武汉" number_="AD0000000003" parent_id_="1" search_code_="1|2|" update_time_="2019-01-16 10:56:54.0"/>
+  <sm_architecture arch_id_="6" create_time_="2019-01-16 17:43:20.0" creator_id_="1" has_child_="0" latitude_="32.059352" level_="2" longitude_="118.796623" name_="南京" number_="AD0000000006" parent_id_="1" search_code_="1|3|" update_time_="2019-01-16 17:43:20.0"/>
+  <sm_architecture_ref_user/>
+  <sm_customer/>
+  <sm_device_type device_type_id_="1" is_default_="0" msg_defined_="GW" type_="0" type_name_="网关"/>
+  <sm_device_type device_type_id_="24" is_default_="0" msg_defined_="2A" type_="2" type_name_="单灯控制器"/>
+  <sm_device_type device_type_id_="25" is_default_="0" msg_defined_="2B" type_="2" type_name_="双灯控制器"/>
+  <sm_device_type device_type_id_="26" is_default_="0" msg_defined_="LD" type_="2" type_name_="LED屏"/>
+  <sm_device_type device_type_id_="27" is_default_="0" msg_defined_="BC" type_="2" type_name_="广播"/>
+  <sm_device_type device_type_id_="28" is_default_="0" msg_defined_="CA" type_="2" type_name_="摄像头"/>
+  <sm_device_type device_type_id_="29" is_default_="0" msg_defined_="EV" type_="2" type_name_="环境检测"/>
+  <sm_device_type device_type_id_="30" is_default_="0" msg_defined_="AD" type_="2" type_name_="一键报警"/>
+  <sm_device_type device_type_id_="31" is_default_="0" msg_defined_="CP" type_="2" type_name_="充电桩"/>
+  <sm_device_type device_type_id_="32" is_default_="0" msg_defined_="WF" type_="2" type_name_="WIFI"/>
+  <sm_dictionary dict_id_="117" category_="sm_log_operation.status" code_="0" description_="失败" sort_="2"/>
+  <sm_dictionary dict_id_="118" category_="sm_log_operation.status" code_="1" description_="成功" sort_="1"/>
+  <sm_dictionary dict_id_="200" category_="device_alarm" code_="over-current" description_="过流" sort_="1"/>
+  <sm_dictionary dict_id_="201" category_="device_alarm" code_="under-current" description_="欠流" sort_="1"/>
+  <sm_dictionary dict_id_="202" category_="device_alarm" code_="over-voltage" description_="过压" sort_="1"/>
+  <sm_dictionary dict_id_="203" category_="device_alarm" code_="under-voltage" description_="欠压" sort_="1"/>
+  <sm_dictionary dict_id_="1009" category_="sm_log_operation.module.sm" code_="-1009" description_="登录" sort_="13"/>
+  <sm_dictionary dict_id_="1010" category_="sm_log_operation.module.sm" code_="-1010" description_="注销" sort_="14"/>
+  <sm_dictionary dict_id_="1011" category_="sm_log_operation.module.sm" code_="-1011" description_="个人信息修改" sort_="15"/>
+  <sm_dictionary dict_id_="1012" category_="sm_log_operation.module.sm" code_="-1012" description_="密码修改" sort_="16"/>
+  <sm_email_contents/>
+  <sm_group/>
+  <sm_i18n id_="1" language_id_="1" name_="系统管理" object_id_="1" type_="1"/>
+  <sm_i18n id_="2" language_id_="2" name_="System Management" object_id_="1" type_="1"/>
+  <sm_i18n id_="3" language_id_="1" name_="地图" object_id_="2" type_="1"/>
+  <sm_i18n id_="4" language_id_="2" name_="Map" object_id_="2" type_="1"/>
+  <sm_i18n id_="5" language_id_="1" name_="设备" object_id_="3" type_="1"/>
+  <sm_i18n id_="6" language_id_="2" name_="Device" object_id_="3" type_="1"/>
+  <sm_i18n id_="7" language_id_="1" name_="告警" object_id_="4" type_="1"/>
+  <sm_i18n id_="8" language_id_="2" name_="Alarm" object_id_="4" type_="1"/>
+  <sm_i18n id_="9" language_id_="1" name_="计划" object_id_="5" type_="1"/>
+  <sm_i18n id_="10" language_id_="2" name_="Plan" object_id_="5" type_="1"/>
+  <sm_i18n id_="11" language_id_="1" name_="IOTDM" object_id_="10" type_="1"/>
+  <sm_i18n id_="12" language_id_="2" name_="IOTDM" object_id_="10" type_="1"/>
+  <sm_i18n id_="13" language_id_="1" name_="系统日志" object_id_="20" type_="1"/>
+  <sm_i18n id_="14" language_id_="2" name_="System Log" object_id_="20" type_="1"/>
+  <sm_i18n id_="15" language_id_="1" name_="城市信息" object_id_="30" type_="1"/>
+  <sm_i18n id_="16" language_id_="2" name_="City Information" object_id_="30" type_="1"/>
+  <sm_i18n id_="17" language_id_="1" name_="用户管理" object_id_="40" type_="1"/>
+  <sm_i18n id_="18" language_id_="2" name_="User Management" object_id_="40" type_="1"/>
+  <sm_i18n id_="19" language_id_="1" name_="角色管理" object_id_="50" type_="1"/>
+  <sm_i18n id_="20" language_id_="2" name_="Role Management" object_id_="50" type_="1"/>
+  <sm_i18n id_="21" language_id_="1" name_="客户管理" object_id_="55" type_="1"/>
+  <sm_i18n id_="22" language_id_="2" name_="Customer Management" object_id_="55" type_="1"/>
+  <sm_i18n id_="23" language_id_="1" name_="系统配置" object_id_="60" type_="1"/>
+  <sm_i18n id_="24" language_id_="2" name_="System Config" object_id_="60" type_="1"/>
+  <sm_i18n id_="25" language_id_="1" name_="LED文件管理" object_id_="23" type_="1"/>
+  <sm_i18n id_="26" language_id_="2" name_="Led File Management" object_id_="23" type_="1"/>
+  <sm_i18n id_="28" language_id_="2" name_="BroadCast File Management" object_id_="25" type_="1"/>
+  <sm_i18n id_="29" language_id_="1" name_="灯杆管理" object_id_="27" type_="1"/>
+  <sm_i18n id_="30" language_id_="2" name_="LampPost Management" object_id_="27" type_="1"/>
+  <sm_i18n id_="31" language_id_="1" name_="分组" object_id_="6" type_="1"/>
+  <sm_i18n id_="32" language_id_="2" name_="Group" object_id_="6" type_="1"/>
+  <sm_i18n id_="33" language_id_="1" name_="摄像头管理" object_id_="7" type_="1"/>
+  <sm_i18n id_="34" language_id_="2" name_="Camera" object_id_="7" type_="1"/>
+  <sm_i18n id_="35" language_id_="1" name_="视频服务器配置" object_id_="8" type_="1"/>
+  <sm_i18n id_="36" language_id_="2" name_="ViewSetting" object_id_="8" type_="1"/>
+  <sm_i18n id_="37" language_id_="1" name_="登录" object_id_="1009" type_="2"/>
+  <sm_i18n id_="38" language_id_="2" name_="Login" object_id_="1009" type_="2"/>
+  <sm_i18n id_="39" language_id_="1" name_="注销" object_id_="1010" type_="2"/>
+  <sm_i18n id_="40" language_id_="2" name_="Logout" object_id_="1010" type_="2"/>
+  <sm_i18n id_="41" language_id_="1" name_="个人信息修改" object_id_="1011" type_="2"/>
+  <sm_i18n id_="42" language_id_="2" name_="Modify user information" object_id_="1011" type_="2"/>
+  <sm_i18n id_="43" language_id_="1" name_="密码修改" object_id_="1012" type_="2"/>
+  <sm_i18n id_="44" language_id_="2" name_="Change Password" object_id_="1012" type_="2"/>
+  <sm_i18n id_="45" language_id_="1" name_="失败" object_id_="117" type_="2"/>
+  <sm_i18n id_="46" language_id_="2" name_="failure" object_id_="117" type_="2"/>
+  <sm_i18n id_="47" language_id_="1" name_="成功" object_id_="118" type_="2"/>
+  <sm_i18n id_="48" language_id_="2" name_="success" object_id_="118" type_="2"/>
+  <sm_i18n id_="49" language_id_="1" name_="过流" object_id_="200" type_="2"/>
+  <sm_i18n id_="50" language_id_="2" name_="Over Current" object_id_="200" type_="2"/>
+  <sm_i18n id_="51" language_id_="1" name_="欠流" object_id_="201" type_="2"/>
+  <sm_i18n id_="52" language_id_="2" name_="Under Current" object_id_="201" type_="2"/>
+  <sm_i18n id_="53" language_id_="1" name_="过压" object_id_="202" type_="2"/>
+  <sm_i18n id_="54" language_id_="2" name_="Over Voltage" object_id_="202" type_="2"/>
+  <sm_i18n id_="55" language_id_="1" name_="欠压" object_id_="203" type_="2"/>
+  <sm_i18n id_="56" language_id_="2" name_="Under Voltage" object_id_="203" type_="2"/>
+  <sm_i18n id_="57" language_id_="1" name_="license管理" object_id_="70" type_="1"/>
+  <sm_i18n id_="58" language_id_="2" name_="license Config" object_id_="70" type_="1"/>
+  <sm_iotdm iotdm_id_="2" del_flag_="0" ip_addr_="192.168.0.1" is_https_="0" port_="8090" status_="1"/>
+  <sm_lamppost/>
+  <sm_language language_id_="1" code_="zh" description_="中文"/>
+  <sm_language language_id_="2" code_="en" description_="English"/>
+  <sm_license/>
+  <sm_log_operation/>
+  <sm_playlist/>
+  <sm_privilege privilege_id_="1" create_time_="2018-12-25 10:51:26.0" is_log_="0" level_="1" name_="系统管理" parent_id_="0" privilege_code_="MENU_1" seq_="1" type_="0"/>
+  <sm_privilege privilege_id_="3" create_time_="2018-12-25 10:51:26.0" is_log_="1" level_="1" name_="设备" parent_id_="0" privilege_code_="M_DEVICE" seq_="1" type_="0"/>
+  <sm_privilege privilege_id_="4" create_time_="2018-12-25 10:51:26.0" is_log_="1" level_="1" name_="告警" parent_id_="0" privilege_code_="M_ALARM" seq_="1" type_="0"/>
+  <sm_privilege privilege_id_="5" create_time_="2018-12-25 10:51:26.0" is_log_="1" level_="1" name_="控制" parent_id_="0" privilege_code_="M_PLAN" seq_="1" type_="0"/>
+  <sm_privilege privilege_id_="6" create_time_="2018-12-25 10:52:44.0" is_log_="1" level_="2" name_="分组管理" parent_id_="1" privilege_code_="M_GROUP" seq_="1" type_="1"/>
+  <sm_privilege privilege_id_="7" create_time_="2018-12-25 10:52:44.0" is_log_="1" level_="2" name_="摄像头管理" parent_id_="1" privilege_code_="M_CAMERA" seq_="1" type_="1"/>
+  <sm_privilege privilege_id_="8" create_time_="2018-12-25 10:52:44.0" is_log_="1" level_="2" name_="视频服务器配置" parent_id_="1" privilege_code_="M_VIEW" seq_="1" type_="1"/>
+  <sm_privilege privilege_id_="10" create_time_="2018-12-25 10:52:44.0" is_log_="1" level_="2" name_="IOT配置" parent_id_="1" privilege_code_="M_IOTDM" seq_="1" type_="1"/>
+  <sm_privilege privilege_id_="23" create_time_="2018-12-25 10:51:26.0" is_log_="1" level_="2" name_="LED文件管理" parent_id_="1" privilege_code_="M_VIDEO" seq_="1" type_="1"/>
+  <sm_privilege privilege_id_="27" create_time_="2018-12-25 10:52:44.0" is_log_="1" level_="2" name_="灯杆管理" parent_id_="1" privilege_code_="M_LAMPPOST" seq_="1" type_="1"/>
+  <sm_privilege privilege_id_="30" create_time_="2018-12-25 10:52:45.0" is_log_="1" level_="2" name_="城市信息" parent_id_="1" privilege_code_="M_CITY" seq_="1" type_="1"/>
+  <sm_privilege privilege_id_="31" create_time_="2018-12-25 10:52:44.0" is_log_="1" level_="2" name_="系统日志" parent_id_="1" privilege_code_="M_SYSTEM_LOG" seq_="1" type_="1"/>
+  <sm_privilege privilege_id_="40" create_time_="2018-12-25 10:51:27.0" is_log_="1" level_="2" name_="用户管理" parent_id_="1" privilege_code_="M_USER" seq_="1" type_="1"/>
+  <sm_privilege privilege_id_="50" create_time_="2018-12-25 10:51:27.0" is_log_="1" level_="2" name_="角色管理" parent_id_="1" privilege_code_="M_ROLE" seq_="1" type_="1"/>
+  <sm_privilege privilege_id_="55" create_time_="2018-12-25 10:51:26.0" is_log_="1" level_="2" name_="客户管理" parent_id_="1" privilege_code_="M_CUSTOMER" seq_="1" type_="1"/>
+  <sm_privilege privilege_id_="60" create_time_="2018-12-25 10:52:45.0" is_log_="1" level_="2" name_="系统配置" parent_id_="1" privilege_code_="M_SYSTEM" seq_="1" type_="1"/>
+  <sm_privilege privilege_id_="70" create_time_="2018-12-25 10:52:45.0" is_log_="1" level_="2" name_="license管理" parent_id_="1" privilege_code_="M_LICENSE" seq_="1" type_="1"/>
+  <sm_role/>
+  <sm_role_ref_privilege/>
+  <sm_system_config sys_key_="func_provider" description_="灯杆厂家" type_="4" sys_value_="样式1"/>
+  <sm_system_config sys_key_="fun_provider" description_="灯杆厂商" type_="4" sys_value_="riscom"/>
+  <sm_system_config sys_key_="mail_account" description_="邮件用户名" type_="2" sys_value_="cfzhanm"/>
+  <sm_system_config sys_key_="mail_lang" description_="邮件语言zh/en" type_="2" sys_value_="zh"/>
+  <sm_system_config sys_key_="mail_password" description_="邮件密码" type_="2" sys_value_="3a29f929ae2729e0a4bd4eab97afb999f5a840e02ba6b167eb8ee383dbc647dd"/>
+  <sm_system_config sys_key_="mail_send" description_="发送通知开关" type_="2" sys_value_="on"/>
+  <sm_system_config sys_key_="mail_smtp_server" description_="发件服务器地址" type_="2" sys_value_="smtp.isoftstone.com"/>
+  <sm_system_config sys_key_="message_send" description_="发送短信开关" type_="2" sys_value_="on"/>
+  <sm_system_config sys_key_="sec_captcha_timeout" description_="验证码超时(秒)" type_="1" sys_value_="60"/>
+  <sm_system_config sys_key_="sec_error_count" description_="登陆错误次数" type_="1" sys_value_="5"/>
+  <sm_system_config sys_key_="sec_locked_time" description_="锁定时间(分)" type_="1" sys_value_="30"/>
+  <sm_system_config sys_key_="sec_login_captcha" description_="启用登录验证码" type_="1" sys_value_="off"/>
+  <sm_system_config sys_key_="sec_pwd_admin_exp" description_="管理员是否过期" type_="1" sys_value_="off"/>
+  <sm_system_config sys_key_="sec_pwd_indate" description_="用户密码有效期(天)" type_="1" sys_value_="90"/>
+  <sm_system_config sys_key_="sec_pwd_notice_days" description_="口令到期提前通知天数(天)" type_="1" sys_value_="1"/>
+  <sm_system_config sys_key_="sec_pwd_not_repeat_count" description_="前N个口令不重复的次数" type_="1" sys_value_="5"/>
+  <sm_system_config sys_key_="sec_refresh_time" description_="大屏刷新时间(分)" type_="1" sys_value_="30"/>
+  <sm_system_config sys_key_="sec_sy_address" description_="盛云消防平台地址" type_="1" sys_value_="http://www.hao123.com"/>
+  <sm_system_config sys_key_="sec_user_lock" description_="用户锁定功能" type_="1" sys_value_="on"/>
+  <sm_system_config sys_key_="sys_version" description_="系统版本号" type_="3" sys_value_="BEMS V100R003C01"/>
+  <sm_user user_id_="1" account_="admin" account_type_="1" create_time_="2018-12-25 10:53:04.0" del_flag_="0" locked_="0" name_="admin" password_="50e2f972421069333a8ea362484989c80dd2c55679035488453d5759e3eecb26" reset_pwd_="0"/>
+  <sm_user_history_p/>
+  <sm_user_login_info/>
+  <sm_user_ref_alarmcategory/>
+  <sm_user_ref_devicetype/>
+  <sm_user_ref_lamppost/>
+  <sm_user_ref_privilege/>
+  <sm_user_ref_role/>
+</dataset>

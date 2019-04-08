@@ -3,6 +3,7 @@ package com.isst.context;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -46,7 +47,7 @@ public class DaoCon extends Base{
 	DataSource datasource;
 	
 	/**
-	 * 备份数据库
+	 * 备份数据库中所有表
 	 * 
 	 * @author ygg
 	 * @throws Exception
@@ -85,6 +86,67 @@ public class DaoCon extends Base{
 				fos.close();
 			}
 		}
+		c.close();
+	}
+	
+	/**
+	 * 备份数据库全量表
+	 * 
+	 * @author ygg
+	 * @throws Exception
+	 */
+	public void backupDB() throws DatabaseUnitException, SQLException, IOException {		
+		IDatabaseConnection c = new DatabaseConnection(datasource.getConnection());
+		DatabaseConfig config = c.getConfig();
+		if (dbdrivername.equals("oracle.jdbc.driver.OracleDriver")) {
+			config.setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new OracleDataTypeFactory());
+		} else {
+			config.setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new MySqlDataTypeFactory());
+		}
+
+		// 如果需要还原，就需要备份，否则不备份原数据库
+		if (dbresume) {
+			IDataSet ds=c.createDataSet();
+			File file = new File(docsource + "sourceData.xml");
+			FlatXmlDataSet.write(ds, new FileWriter(file));
+		}
+		c.close();
+	}
+	
+	/**
+	 * 还原数据库数据
+	 * if null，还原原数据库，if not null，还原sourceUnit中对应的文件
+	 * @author ygg
+	 * @throws Exception
+	 */
+	public void recoverDB(String sourceXML) throws DatabaseUnitException, SQLException, IOException {
+		IDatabaseConnection c = new DatabaseConnection(datasource.getConnection());
+		ClassLoader classd = Application.class.getClassLoader();
+		DatabaseConfig config = c.getConfig();
+		if (dbdrivername.equals("oracle.jdbc.driver.OracleDriver")) {
+			config.setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new OracleDataTypeFactory());
+		} else {
+			config.setProperty(DatabaseConfig.PROPERTY_DATATYPE_FACTORY, new MySqlDataTypeFactory());
+		}
+
+		// Since release 2.4.7 we use a builder:
+		if(dbresume){
+			if(sourceXML == null){
+				FlatXmlDataSetBuilder builder = new FlatXmlDataSetBuilder();
+				builder.setColumnSensing(true);
+				IDataSet backupData = builder.build(new File(docsource  + "sourceData.xml"));
+				DatabaseOperation.CLEAN_INSERT.execute(c, backupData);
+			}
+			else{
+				FlatXmlDataSetBuilder builder = new FlatXmlDataSetBuilder();
+				builder.setColumnSensing(true);
+				InputStream is = classd.getResourceAsStream("sourceUnit/" + sourceXML + ".xml");
+				InputStreamReader isr = new InputStreamReader(is, "GB2312");
+				IDataSet backupData = builder.build(isr);
+				DatabaseOperation.CLEAN_INSERT.execute(c, backupData);
+			}
+		}
+		c.close();
 	}
 		
 	/**
@@ -168,6 +230,44 @@ public class DaoCon extends Base{
 				}
 			}
 		}
+	}
+	
+	/***
+	 * 脚本刷库
+	 * @param sqlSourcePath
+	 * @throws IOException 
+	 * @throws SQLException 
+	 */
+	public void flushDB(String sqlSourcePath) throws IOException, SQLException{
+		ClassLoader classd = Application.class.getClassLoader();
+		InputStream is = classd.getResourceAsStream("sqls/" + sqlSourcePath + ".sql");
+		InputStreamReader isr = new InputStreamReader(is, "UTF-8");
+		BufferedReader br = new BufferedReader(isr);
+		//read file
+		StringBuffer sqls = new StringBuffer();
+		String s = "";
+        while ((s = br.readLine()) != null)
+        {
+            if (s.indexOf("#") == -1 && !s.startsWith("--")
+                && !"".equals(s) && !s.contains("delimiter") && !s.startsWith("/*"))
+            {
+                sqls.append(s);
+                sqls.append("\n");
+            }
+        }
+        Statement smtt = jdbcTemplate.getDataSource().getConnection().createStatement();
+        String abc[]=sqls.toString().split(";");
+        for (String z : abc)
+        {
+            if (!z.trim().isEmpty() && !z.isEmpty())
+            {
+            	System.out.println(z);
+                smtt.executeUpdate(z);
+            }
+        }
+        if (smtt !=null){
+        	smtt.close();
+        }
 	}
 	
 	/**

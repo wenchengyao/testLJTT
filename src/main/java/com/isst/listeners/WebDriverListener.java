@@ -17,32 +17,25 @@ import org.testng.IInvokedMethod;
 import org.testng.IInvokedMethodListener;
 import org.testng.ITestResult;
 
-import com.isst.Application;
-import com.isst.context.Base;
 import com.isst.driver.Driver;
 import com.isst.driver.DriverManager;
 
 import io.qameta.allure.Attachment;
 
 public class WebDriverListener implements IInvokedMethodListener {
+	private static String browserName= "";
+	private static String appUrl = "";
+	private static String dbus = "";
 
     @Override
     public void beforeInvocation(IInvokedMethod method, ITestResult testResult) {
+    	browserName=BootListener.ac.getEnvironment().getProperty("browser");
+    	appUrl = BootListener.ac.getEnvironment().getProperty("appUrl");
+    	dbus = BootListener.ac.getEnvironment().getProperty("dbus");
 
         if(method.isTestMethod()) {
-        	String browserName = null;
-        	String appUrl = null;
-        	//if we lose the params,do this
-        	try{
-        		browserName = Application.get().getEnvironment().getProperty("browser");
-        		appUrl = Application.get().getEnvironment().getProperty("appUrl");
-        	}catch(Exception e){
-        		browserName = ((Base)method.getTestMethod().getInstance()).getBrowser();
-        		appUrl = ((Base)method.getTestMethod().getInstance()).getAppUrl();
-        	}
-            
             try {
-                WebDriver driver = DriverManager.createInstance(browserName, appUrl, method.getTestMethod().getMethodName());
+                WebDriver driver = DriverManager.createInstance(browserName, appUrl, method.getTestMethod().getMethodName(),dbus);
                 System.out.println("Initializing webdriver session --> Thread ID: " + Thread.currentThread().getId());
                 System.out.println("Running test --> " + method.getTestMethod().getMethodName());
                 Driver.setWebDriver(driver);
